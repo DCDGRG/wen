@@ -6,7 +6,7 @@ function Education() {
         <div className='page-wrapper'>
             <div className="education-container">
                 <div className="XDUlogo">
-                    <img src="https://github.com/DCDGRG/image/blob/08d2b2e5976ec18f45da68ac8200472a72dd48f8/XDUlogo.png" alt="XDUlogo" />
+                    <img src="https://github.com/DCDGRG/image/blob/main/XDUlogo.png?raw=true" alt="XDUlogo" />
                 </div>
 
                 <div className="education-details">

@@ -6,7 +6,7 @@ function heroSection() {
     <div className="heroContainer">
 
       <div className="avatar">
-        <img src="https://github.com/DCDGRG/image/blob/08d2b2e5976ec18f45da68ac8200472a72dd48f8/IMG_2140.jpeg" alt="avatar" />
+        <img src="https://github.com/DCDGRG/image/blob/main/IMG_2140.jpeg?raw=true" alt="avatar" />
       </div>
 
       <div className="hero">
