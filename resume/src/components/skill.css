@@ -1,0 +1,40 @@
+.skill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px; /* 最大宽度 */
+    width: 100%;
+    margin: 0 auto; /* 居中对齐 */
+    box-sizing: border-box;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* 间距 */
+    list-style: none; /* 移除默认的列表样式 */
+    margin: 0;
+    padding: 0;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100px; /* 固定宽度 */
+}
+
+.skill-item span {
+    font-size: 1em;
+    color: #333; /* 文字颜色 */
+    margin-top: 10px; /* 图标与文字之间的间距 */
+}
+
+@media (max-width: 768px) {
+    .skill-container {
+        max-width: 90%; /* 在小屏幕上调整最大宽度 */
+    }
+}

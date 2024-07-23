@@ -1,0 +1,48 @@
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(222, 219, 219, 0.634);
+  padding: 15px;
+  width: 460px;
+  margin: 0 auto;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 25px;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .skill-container {
+    max-width: 90%;
+  }
+}
+
+.NavBar p {
+  margin: 0 15px;
+  cursor: pointer;
+  color: rgb(130, 136, 136);
+}
+
+.NavBar p:hover {
+  color: rgb(0, 0, 0);
+}
+
+.click-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: click-effect 0.4s ease-out;
+  pointer-events: none;
+}
+
+@keyframes click-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
