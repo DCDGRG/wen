@@ -40,7 +40,7 @@ function NavigationBar() {
     const newCircle = {
       x: e.clientX - 25,
       y: e.clientY - 25,
-      id: new Date().getTime(),
+      id: new Date().getTime(),   // new Date().getTime()作用是获取当前时间戳，这确保了每个圆圈都有一个唯一的ID
     };
     setCircles((prevCircles) => [...prevCircles, newCircle]);
   };
