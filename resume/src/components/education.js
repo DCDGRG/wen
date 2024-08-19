@@ -3,7 +3,7 @@ import './education.css';
 
 function Education() {
     return (
-        <div className='page-wrapper'>
+        <div id="education" className='page-wrapper'>
             <div className="education-container">
                 <div className="XDUlogo">
                     <img src="https://github.com/DCDGRG/image/blob/main/XDUlogo.png?raw=true" alt="XDUlogo" />
@@ -25,7 +25,6 @@ function Education() {
                     </ul>
                     </p>
                     
-               
                 </div>
             </div>
         </div>

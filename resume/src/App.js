@@ -2,10 +2,9 @@ import React from 'react';
 import './App.css';
 import NavigationBar from './components/navigationBar';
 import Hero from './components/hero';
+import Projects from './components/project';
 import Education from './components/education';
-import Skills from './components/skill'
-
-
+import Skills from './components/skill';
 
 function App() {
 
@@ -27,6 +26,7 @@ function App() {
         
 
         <p> My Projects</p>
+        <Projects />
 
 
         <p> Contact Me</p>

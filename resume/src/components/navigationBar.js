@@ -1,74 +1,48 @@
-// import React, { useState, useEffect}from "react";
-// import './navigationBar.css';
-
-// function NavigationBar() {
-
-//   const [circles, setCircles] = useState([]);
-
-//   const handleClick = (e) => {
-//     const newCircle = {
-//       x: e.clientX - 25,
-//       y: e.clientY - 25,
-//       id: new Date().getTime(),
-//     };
-
-
-//   }
-
-//   return (
-//     <div>
-//         <div className="NavBar">
-//             <p>Home</p>
-//             <p>Education</p>
-//             <p>Projects</p>
-//             <p>Skills</p>
-//             <p>Contact</p>
-//         </div>
-//     </div>
-//   );
-// }
-
-// export default NavigationBar;
-
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './navigationBar.css';
 
 function NavigationBar() {
-  const [circles, setCircles] = useState([]);
-
-  const handleClick = (e) => {
-    const newCircle = {
-      x: e.clientX - 25,
-      y: e.clientY - 25,
-      id: new Date().getTime(),   // new Date().getTime()作用是获取当前时间戳，这确保了每个圆圈都有一个唯一的ID
-    };
-    setCircles((prevCircles) => [...prevCircles, newCircle]);
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCircles((prevCircles) => prevCircles.slice(1));
-    }, 400);
-
-    return () => clearInterval(timer);
-  }, [circles]);
+  const [activeTab, setActiveTab] = useState("home");
 
   return (
-    <div className="App" onClick={handleClick}>
+    <div className="App">
       <div className="NavBar">
-        <p>Home</p>
-        <p>Education</p>
-        <p>Projects</p>
-        <p>Skills</p>
-        <p>Contact</p>
+        <a 
+          href="#home" 
+          className={activeTab === "home" ? "active" : ""} 
+          onClick={() => setActiveTab("home")}
+        >
+          Home
+        </a>
+        <a 
+          href="#education" 
+          className={activeTab === "education" ? "active" : ""} 
+          onClick={() => setActiveTab("education")}
+        >
+          Education
+        </a>
+        <a 
+          href="#projects" 
+          className={activeTab === "projects" ? "active" : ""} 
+          onClick={() => setActiveTab("projects")}
+        >
+          Projects
+        </a>
+        <a 
+          href="#skills" 
+          className={activeTab === "skills" ? "active" : ""} 
+          onClick={() => setActiveTab("skills")}
+        >
+          Skills
+        </a>
+        <a 
+          href="#contact" 
+          className={activeTab === "contact" ? "active" : ""} 
+          onClick={() => setActiveTab("contact")}
+        >
+          Contact
+        </a>
       </div>
-      {circles.map((circle) => (
-        <div
-          key={circle.id}
-          className="click-circle"
-          style={{ left: circle.x, top: circle.y, width: '50px', height: '50px' }}
-        />
-      ))}
     </div>
   );
 }
