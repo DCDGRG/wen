@@ -18,18 +18,19 @@ function App() {
       <main>
         <Hero /> 
 
-        <p> My Education</p>
+        
+
+        <p style={{fontSize:'1.5rem', fontFamily: 'Poppins, sans-serif' }}> My Education</p>
         <Education />
 
-        <p> My Skills</p>
+        <p style={{fontSize:'1.5rem', fontFamily: 'Poppins, sans-serif' }}> My Skills</p>
         <Skills />
         
 
-        <p> My Projects</p>
+        <p style={{ fontSize: '1.5em', fontFamily: 'Poppins, sans-serif' }}>My Projects</p>
         <Projects />
-
-
-        <p> Contact Me</p>
+        
+        <p style={{fontSize:'1.5rem', fontFamily: 'Poppins, sans-serif' }}> Contact Me</p>
         
       </main>
 
