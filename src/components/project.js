@@ -6,6 +6,7 @@ import './project.css';
 
 function Projects() {
     return (
+        <div id="projects" className='page-wrapper'>
         <div className="project-container">
             <div className="projects">
 
@@ -70,6 +71,7 @@ function Projects() {
                 </div>
 
             </div>
+        </div>
         </div>
     );
 }

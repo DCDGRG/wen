@@ -1,3 +1,10 @@
+.page-wrapper {
+    display: flex;
+    flex-direction: column; /* 添加这行，使子元素竖向排列 */
+    justify-content: center;
+    align-items: center;
+}
+
 .projects {
     display: flex;
     flex-direction: column;

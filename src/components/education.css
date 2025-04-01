@@ -1,9 +1,10 @@
+
 /* 页面的包装容器 */
 .page-wrapper {
     display: flex;
+    flex-direction: column; /* 添加这行，使子元素竖向排列 */
     justify-content: center;
     align-items: center;
-
 }
 
 .education-container {
@@ -26,7 +27,7 @@
     }
 }
 
-.XDUlogo img {
+.logo img {
     width: 200px; /* 根据需要调整大小 */
     height: auto; /* 保持宽高比 */
     margin-right: 20px; /* 右侧留出空间 */

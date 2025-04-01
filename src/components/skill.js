@@ -3,6 +3,7 @@ import './skill.css'
 
 function Skill() {
     return (
+        <div id="skills" className='page-wrapper'>
 
         <div className="skill-container">
 
@@ -74,6 +75,7 @@ function Skill() {
             </ul>
 
 
+        </div>
         </div>
     );
 }
