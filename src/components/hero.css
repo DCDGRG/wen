@@ -1,0 +1,60 @@
+.heroContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 90px;
+
+    width: 100vw;
+    height: 600px;
+    margin: 0 auto;
+    box-sizing: border-box; /* 包括内边距和边框在内的宽度计算, 确保窗口缩放始终占满窗口 */
+
+    background-color: #61a7ec;
+  }
+  
+  .avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .avatar img {
+    border-radius: 50%; /* 将图片裁剪为圆形 */
+    width: 160px; /* 设置图片宽度 */
+    height: 160px; /* 设置图片高度 */
+    object-fit: cover; /* 确保图片按比例缩放并覆盖整个框 */
+  }
+  
+  .hero {
+    text-align: center; /* 文本居中对齐 */
+  }
+  
+  .hero h2 {
+    font-size: 2em;
+    margin-bottom: 6px;
+    color: whitesmoke; /* 设置文字颜色 */
+    font-family: 'Arial', sans-serif; /* 设置字体 */
+    line-height: 1.5; /* 设置行高 */
+  }
+  
+  .hero p {
+    font-size: 1.5em;
+    color: whitesmoke; /* 设置文字颜色 */
+    font-family: 'Arial', sans-serif; /* 设置字体 */
+    font-weight: bold;  /* 加粗 */  
+  }
+  
+  .social-links {
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #0073e6; /* 设置链接颜色 */
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }
