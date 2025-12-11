@@ -2,43 +2,16 @@ import React, { useEffect, useRef, useState } from "react";
 import './navigationBar.css';
 
 function NavigationBar() {
-
   const [activeTab, setActiveTab] = useState("home");
-  const [sliderStyle, setSliderStyle] = useState({});
   const navRef = useRef(null);
 
-  const handleClick = (tab, event) => {
+  const handleClick = (tab) => {
     setActiveTab(tab);
-
-    const navItem = event.target;
-    setSliderStyle({
-      left: navItem.offsetLeft + "px",
-      width: navItem.offsetWidth + "px"
-    });
-  };
-
-  // useEffect(() => {
-  //   const activeElement = navRef.current.querySelector(".active");
-  //   if (activeElement) {
-  //     setSliderStyle({
-  //       left: activeElement.offsetLeft + "px",
-  //       width: activeElement.offsetWidth + "px"
-  //     });
-  //   }
-  // }, []);
-
-  useEffect(() => {
-    if (navRef.current) {
-      const activeElement = navRef.current.querySelector(".active");
-      if (activeElement) {
-        setSliderStyle({
-          left: activeElement.offsetLeft + "px",
-          width: activeElement.offsetWidth + "px"
-        });
-      }
+    const element = document.getElementById(tab);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [activeTab]);    //// 依赖 activeTab, 每次 activeTab 变化时重新设置滑块样式
-
+  };
 
   return (
     <div className="App">
@@ -46,7 +19,7 @@ function NavigationBar() {
         <a 
           href="#home" 
           className={activeTab === "home" ? "active" : ""} 
-          onClick={(event) => handleClick("home", event)}
+          onClick={() => handleClick("home")}
         >
           Home
         </a>
@@ -54,7 +27,7 @@ function NavigationBar() {
         <a 
           href="#education" 
           className={activeTab === "education" ? "active" : ""} 
-          onClick={(event) => handleClick("education", event)}
+          onClick={() => handleClick("education")}
         >
           Education
         </a>
@@ -62,8 +35,7 @@ function NavigationBar() {
         <a 
           href="#projects" 
           className={activeTab === "projects" ? "active" : ""}
-          onClick={(event) => handleClick("projects", event)}
-          
+          onClick={() => handleClick("projects")}
         >
           Projects
         </a>
@@ -71,21 +43,17 @@ function NavigationBar() {
         <a 
           href="#skills" 
           className={activeTab === "skills" ? "active" : ""}
-          onClick={(event) => handleClick("skills", event)}
-         
+          onClick={() => handleClick("skills")}
         >
           Skills
         </a>
         <a 
           href="#contact" 
           className={activeTab === "contact" ? "active" : ""}
-          onClick={(event) => handleClick("contact", event)}
+          onClick={() => handleClick("contact")}
         >
           Contact
         </a>
-
-        <div className="Slider" style={sliderStyle}></div>  {/* 滑块 */}
-
       </div>
     </div>
   );

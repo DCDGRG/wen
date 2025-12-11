@@ -5,6 +5,8 @@ import Hero from './components/hero';
 import Projects from './components/project';
 import Education from './components/education';
 import Skills from './components/skill';
+import Contact from './components/contact';
+import SectionTitle from './components/SectionTitle';
 
 function App() {
 
@@ -16,25 +18,20 @@ function App() {
       </header>
 
       <main>
-        <Hero /> 
+        <Hero />
 
-        
-
-        <p style={{fontSize:'1.5rem', fontFamily: 'Poppins, sans-serif' }}> My Education</p>
+        <SectionTitle>Education</SectionTitle>
         <Education />
 
-        <p style={{fontSize:'1.5rem', fontFamily: 'Poppins, sans-serif' }}> My Skills</p>
+        <SectionTitle>Skills</SectionTitle>
         <Skills />
-        
 
-        <p style={{ fontSize: '1.5em', fontFamily: 'Poppins, sans-serif' }}>My Projects</p>
+        <SectionTitle>Projects</SectionTitle>
         <Projects />
-        
-        <p style={{fontSize:'1.5rem', fontFamily: 'Poppins, sans-serif' }}> Contact Me</p>
-        
-      </main>
 
-      
+        <Contact />
+
+      </main>
 
     </div>
   );

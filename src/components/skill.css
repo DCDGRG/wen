@@ -1,47 +1,121 @@
 .page-wrapper {
-    display: flex;
-    flex-direction: column; /* 添加这行，使子元素竖向排列 */
-    justify-content: center;
-    align-items: center;
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #3498db;
+    border-radius: 2px;
 }
 
 .skill-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    max-width: 1200px; /* 最大宽度 */
-    width: 100%;
-    margin: 0 auto; /* 居中对齐 */
-    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* 间距 */
-    list-style: none; /* 移除默认的列表样式 */
-    margin: 0;
-    padding: 0;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.2rem;
+    padding: 1rem;
 }
 
 .skill-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    width: 100px; /* 固定宽度 */
+    justify-content: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill-item .iconify {
+    font-size: 2.2rem;
+    margin-bottom: 0.6rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .iconify {
+    transform: scale(1.1);
 }
 
 .skill-item span {
-    font-size: 1em;
-    color: #333; /* 文字颜色 */
-    margin-top: 10px; /* 图标与文字之间的间距 */
+    font-size: 0.9rem;
+    color: #2c3e50;
+    font-weight: 500;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .skills-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-    .skill-container {
-        max-width: 90%; /* 在小屏幕上调整最大宽度 */
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .skill-item {
+        padding: 0.9rem;
+    }
+
+    .skill-item .iconify {
+        font-size: 2rem;
+    }
+
+    .skill-item span {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .skill-item {
+        padding: 0.8rem;
+    }
+
+    .skill-item .iconify {
+        font-size: 1.8rem;
+    }
+
+    .skill-item span {
+        font-size: 0.8rem;
     }
 }

@@ -1,68 +1,173 @@
-
-/* 页面的包装容器 */
 .page-wrapper {
-    display: flex;
-    flex-direction: column; /* 添加这行，使子元素竖向排列 */
-    justify-content: center;
-    align-items: center;
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #3498db;
+    border-radius: 2px;
 }
 
 .education-container {
     display: flex;
-    align-items: center;
-    padding: 20px;
-    background-color: #f9f9f9; /* 背景颜色 */
-    border-radius: 10px; /* 圆角 */
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 轻微的阴影效果 */
-    margin: 20px 0;
-
-    width: 650px;;
-    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-@media screen and (max-width: 650px) {
-    .education-container {
-        width: 80vw; /* 宽度占满屏幕 */
-    }
+.education-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .logo img {
-    width: 200px; /* 根据需要调整大小 */
-    height: auto; /* 保持宽高比 */
-    margin-right: 20px; /* 右侧留出空间 */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover .logo img {
+    transform: scale(1.05);
 }
 
 .education-details {
-    flex: 1; /* 占据剩余空间 */
+    flex: 1;
 }
 
-.education-details h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-    color: #333; /* 标题颜色 */
-    font-family: 'Arial', sans-serif; /* 设置字体 */
+.education-details h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
 }
 
-.education-details p {
-    font-size: 1.2em;
-    color: #000000; /* 文本颜色 */
-    margin: 5px 0; /* 段落间距 */
-    font-family: 'Arial', sans-serif; /* 设置字体 */
-    text-align: left;   /*对齐到左边*/
-    font-family: 'Arial', sans-serif; /* 设置字体 */
-
+.institution {
+    color: #3498db;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
 
-.education-details ul {
-    list-style-type: disc; /* 使用圆点作为列表项标记 */
-    padding-left: 20px; /* 圆点的位置 */
-    margin: 5px 0; /* 列表的间距 */
-    list-style-position: inside; /* 圆点在列表项内部 */
+.timeline {
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
 }
 
-.education-details li {
-    font-size: 0.9em;
-    margin: 5px 0; /* 列表项的间距 */
+.major, .focus, .gpa {
+    color: #34495e;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.gpa {
+    color: #2c3e50;
+    font-weight: 600;
+    background: #f1f5f9;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.core-courses h4, .description h4 {
+    color: #2c3e50;
+    margin: 1rem 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.core-courses ul {
+    list-style-type: none;
     padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.core-courses li {
+    background: #f1f5f9;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+.description p {
+    color: #34495e;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .education-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 1rem;
+    }
+
+    .core-courses ul {
+        justify-content: center;
+    }
+
+    .gpa {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .education-details h3 {
+        font-size: 1.3rem;
+    }
+
+    .institution {
+        font-size: 1.1rem;
+    }
 }

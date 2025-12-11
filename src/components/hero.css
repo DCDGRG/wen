@@ -2,59 +2,159 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding: 90px;
-
+    padding: clamp(5rem, 8vw, 8rem) clamp(2rem, 5vw, 5.625rem) clamp(2rem, 5vw, 5.625rem);
     width: 100vw;
-    height: 600px;
+    min-height: 60vh;
+    max-height: 600px;
     margin: 0 auto;
     box-sizing: border-box; /* 包括内边距和边框在内的宽度计算, 确保窗口缩放始终占满窗口 */
+    background: linear-gradient(-45deg, #61a7ec, #7cb9f8, #4d9be6, #3689db);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
 
-    background-color: #61a7ec;
-  }
-  
-  .avatar {
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.avatar {
     display: flex;
     justify-content: center;
-    margin-bottom: 15px;
-  }
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    animation: fadeInDown 1s ease-out;
+}
   
-  .avatar img {
+.avatar img {
     border-radius: 50%; /* 将图片裁剪为圆形 */
-    width: 160px; /* 设置图片宽度 */
-    height: 160px; /* 设置图片高度 */
+    width: clamp(120px, 15vw, 160px); /* 设置图片宽度 */
+    height: clamp(120px, 15vw, 160px); /* 设置图片高度 */
     object-fit: cover; /* 确保图片按比例缩放并覆盖整个框 */
-  }
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar img:hover {
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+}
   
-  .hero {
+.hero {
     text-align: center; /* 文本居中对齐 */
-  }
+    max-width: 90%;
+    margin: 0 auto;
+}
   
-  .hero h2 {
-    font-size: 2em;
-    margin-bottom: 6px;
+.hero h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
     color: whitesmoke; /* 设置文字颜色 */
     font-family: 'Arial', sans-serif; /* 设置字体 */
-    line-height: 1.5; /* 设置行高 */
-  }
+    line-height: 1.3; /* 设置行高 */
+    animation: fadeInUp 1s ease-out 0.5s both;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
   
-  .hero p {
-    font-size: 1.5em;
+.hero p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     color: whitesmoke; /* 设置文字颜色 */
     font-family: 'Arial', sans-serif; /* 设置字体 */
     font-weight: bold;  /* 加粗 */  
-  }
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out 0.7s both;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
   
-  .social-links {
-    margin-top: 20px;
-  }
+.social-links {
+    margin-top: clamp(1rem, 3vw, 2rem);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
   
-  .social-links a {
-    margin: 0 10px;
+.social-links a {
     text-decoration: none;
-    color: #0073e6; /* 设置链接颜色 */
-  }
-  
-  .social-links a:hover {
-    text-decoration: underline;
-  }
+    color: #0073e6;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.social-links a:hover {
+    color: #005bb8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 1);
+}
+
+.social-links a::after {
+    display: none;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .heroContainer {
+        padding: 6rem 1rem 2rem;
+    }
+    
+    .hero {
+        max-width: 100%;
+    }
+
+    .social-links {
+        gap: 15px;
+    }
+
+    .social-links a {
+        min-width: 100px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .heroContainer {
+        padding: 5rem 1rem 1.5rem;
+    }
+}

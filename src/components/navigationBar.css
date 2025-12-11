@@ -3,8 +3,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgba(222, 219, 219, 0.634);
-  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 12px;
   width: 530px;
   margin: 0 auto;
   position: fixed;
@@ -13,41 +13,79 @@
   transform: translateX(-50%);
   border-radius: 40px;
   z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
-
 
 @media (max-width: 768px) {
   .skill-container {
     max-width: 90%;
   }
 }
+
 .NavBar a {
   text-decoration: none;
   color: #6c757d;
-  font-weight: 450;
+  font-weight: 500;
   font-size: 1rem;
   padding: 10px 25px;
   border-radius: 50px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   z-index: 1;
+  margin: 0 2px;
 }
 
 .NavBar a:hover {
-  background-color: #e9ecef;
-  color: #343a40;
+  color: #3498db;
 }
 
 .NavBar .active {
-  background-color: #f8f9fa;
-  color: #000;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  color: #3498db;
+  font-weight: 600;
 }
 
-.slider {
+/* 修改悬停效果为包裹式动画 */
+.NavBar a::before {
+  content: '';
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  height: 4px;
-  background-color: #000;
-  transition: left 0.3s ease, width 0.3s ease;
+  background: rgba(52, 152, 219, 0.1);
+  border-radius: 50px;
+  z-index: -1;
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.NavBar a:hover::before {
+  transform: scale(1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .NavBar {
+    width: 90%;
+    max-width: 500px;
+    padding: 8px;
+  }
+
+  .NavBar a {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .NavBar {
+    width: 95%;
+    padding: 6px;
+  }
+
+  .NavBar a {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
 }
