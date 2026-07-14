@@ -20,13 +20,13 @@ function App() {
       <main>
         <Hero />
 
-        <SectionTitle>Education</SectionTitle>
+        <SectionTitle eyebrow="Academic path" targetId="education">Education</SectionTitle>
         <Education />
 
-        <SectionTitle>Skills</SectionTitle>
+        <SectionTitle eyebrow="Toolbox" targetId="skills">Skills</SectionTitle>
         <Skills />
 
-        <SectionTitle>Projects</SectionTitle>
+        <SectionTitle eyebrow="Selected work" targetId="projects">Projects</SectionTitle>
         <Projects />
 
         <Contact />

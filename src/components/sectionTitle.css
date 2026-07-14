@@ -1,16 +1,30 @@
 .section-title-container {
     text-align: center;
-    margin: 3rem 0;
+    margin: clamp(3.5rem, 6vw, 5rem) auto 1.75rem;
     position: relative;
+    max-width: 760px;
+    padding: 0 1.25rem;
+    scroll-margin-top: 96px;
+}
+
+.section-title-eyebrow {
+    margin: 0 0 0.65rem;
+    color: var(--color-primary);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .section-title {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    font-weight: 600;
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.15rem);
+    color: var(--color-ink);
+    font-weight: 800;
     display: inline-block;
     position: relative;
-    padding-bottom: 1rem;
+    padding-bottom: 1.1rem;
+    line-height: 1.05;
 }
 
 .section-title::after {
@@ -19,20 +33,14 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #3498db, #2980b9);
+    width: 74px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
     border-radius: 2px;
 }
 
 @media (max-width: 768px) {
-    .section-title {
-        font-size: 2rem;
+    .section-title-container {
+        margin-top: 3rem;
     }
 }
-
-@media (max-width: 480px) {
-    .section-title {
-        font-size: 1.8rem;
-    }
-} 

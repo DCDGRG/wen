@@ -41,7 +41,39 @@ const Contact = () => {
 
     return (
         <div id="contact" className="contact-container">
-            <h2 className="section-title">Contact Me</h2>
+            <div className="contact-copy">
+                <p className="section-kicker">Contact</p>
+                <h2 className="contact-title">Let us build something useful.</h2>
+                <p>
+                    I am open to software engineering internships, full-time roles, and research-adjacent product work.
+                </p>
+
+                <div className="contact-info">
+                    <p>Email: <a href="mailto:dawenw@icloud.com">dawenw@icloud.com</a></p>
+
+                    <div className="contact-social-links">
+                        <a
+                            href="https://github.com/DCDGRG"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="contact-social-link github-link"
+                        >
+                            <FaGithub className="social-icon" />
+                            <span>GitHub</span>
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/dawen-wang-396315231/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="contact-social-link"
+                        >
+                            <FaLinkedin className="social-icon" />
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <form ref={form} onSubmit={sendEmail} className="contact-form">
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
@@ -91,31 +123,6 @@ const Contact = () => {
                     </div>
                 )}
             </form>
-
-            <div className="contact-info">
-                <p>Or reach me directly at: <a href="mailto:dawenw@icloud.com">dawenw@icloud.com</a></p>
-
-                <div className="social-links">
-                    <a
-                        href="https://github.com/DCDGRG"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="social-link github-link"
-                    >
-                        <FaGithub className="social-icon" />
-                        <span>GitHub</span>
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/dawen-wang-396315231/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="social-link"
-                    >
-                        <FaLinkedin className="social-icon" />
-                        <span>LinkedIn</span>
-                    </a>
-                </div>
-            </div>
         </div>
     );
 };

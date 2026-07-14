@@ -10,10 +10,17 @@ function heroSection() {
       </div>
 
       <div className="hero">
-        <h2>Hi, I'm Terry.<br />
-          I'm a student graduate from XiDian University.<br />
-          and now I'm going to find a formal job or internship.<br />
-          Besides, I'm considering to continue with master studies. </h2>
+        <p className="hero-kicker">Computer Science Graduate</p>
+        <h1>Hi, I'm Terry.</h1>
+        <p className="hero-copy">
+          I graduated from XiDian University and am currently looking for a full-time software role or internship.
+          I am also considering continuing with master's studies.
+        </p>
+        <div className="hero-highlights" aria-label="Profile highlights">
+          <span>React</span>
+          <span>Full-stack</span>
+          <span>Open to opportunities</span>
+        </div>
 
         <div className="social-links"></div>
 

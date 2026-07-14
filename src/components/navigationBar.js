@@ -1,61 +1,87 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import './navigationBar.css';
+
+const navItems = [
+  { id: "home", label: "Home" },
+  { id: "education", label: "Education" },
+  { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" }
+];
 
 function NavigationBar() {
   const [activeTab, setActiveTab] = useState("home");
-  const navRef = useRef(null);
 
-  const handleClick = (tab) => {
+  useEffect(() => {
+    let frameId = null;
+
+    const getTarget = (id) => (
+      document.querySelector(`[data-nav-target="${id}"]`) ||
+      document.getElementById(id)
+    );
+
+    const updateActiveTabNow = () => {
+      const anchorY = window.scrollY + window.innerHeight * 0.32;
+      let current = "home";
+
+      navItems.forEach(({ id }) => {
+        const element = getTarget(id);
+        if (element && element.offsetTop <= anchorY) {
+          current = id;
+        }
+      });
+
+      setActiveTab(current);
+    };
+
+    const updateActiveTab = () => {
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+      }
+
+      frameId = window.requestAnimationFrame(() => {
+        updateActiveTabNow();
+        frameId = null;
+      });
+    };
+
+    updateActiveTabNow();
+    window.addEventListener("scroll", updateActiveTab, { passive: true });
+    window.addEventListener("resize", updateActiveTab);
+    window.addEventListener("hashchange", updateActiveTab);
+
+    return () => {
+      if (frameId) {
+        window.cancelAnimationFrame(frameId);
+      }
+      window.removeEventListener("scroll", updateActiveTab);
+      window.removeEventListener("resize", updateActiveTab);
+      window.removeEventListener("hashchange", updateActiveTab);
+    };
+  }, []);
+
+  const handleClick = (event, tab) => {
+    event.preventDefault();
     setActiveTab(tab);
-    const element = document.getElementById(tab);
+    const element = document.querySelector(`[data-nav-target="${tab}"]`) || document.getElementById(tab);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   return (
-    <div className="App">
-      <div className="NavBar" ref={navRef}>
-        <a 
-          href="#home" 
-          className={activeTab === "home" ? "active" : ""} 
-          onClick={() => handleClick("home")}
+    <nav className="NavBar" aria-label="Portfolio navigation">
+      {navItems.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          className={activeTab === item.id ? "active" : ""}
+          onClick={(event) => handleClick(event, item.id)}
         >
-          Home
+          {item.label}
         </a>
-
-        <a 
-          href="#education" 
-          className={activeTab === "education" ? "active" : ""} 
-          onClick={() => handleClick("education")}
-        >
-          Education
-        </a>
-
-        <a 
-          href="#projects" 
-          className={activeTab === "projects" ? "active" : ""}
-          onClick={() => handleClick("projects")}
-        >
-          Projects
-        </a>
-        
-        <a 
-          href="#skills" 
-          className={activeTab === "skills" ? "active" : ""}
-          onClick={() => handleClick("skills")}
-        >
-          Skills
-        </a>
-        <a 
-          href="#contact" 
-          className={activeTab === "contact" ? "active" : ""}
-          onClick={() => handleClick("contact")}
-        >
-          Contact
-        </a>
-      </div>
-    </div>
+      ))}
+    </nav>
   );
 }
 

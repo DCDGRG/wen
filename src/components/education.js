@@ -6,7 +6,7 @@ const Education = () => {
         <div id="education" className='page-wrapper'>
             <div className="education-container">
                 <div className="education-card">
-                    <div className="logo">
+                    <div className="education-logo">
                         <img src="https://github.com/DCDGRG/image/blob/main/XDUlogo.png?raw=true" alt="XiDian University" />
                     </div>
                     <div className="education-details">
@@ -29,7 +29,7 @@ const Education = () => {
                 </div>
 
                 <div className="education-card">
-                    <div className="logo">
+                    <div className="education-logo">
                         <img src="https://github.com/DCDGRG/image/blob/main/ucr-seal-big.png?raw=true" alt="UCRlogo" />
                     </div>
                     <div className="education-details">
