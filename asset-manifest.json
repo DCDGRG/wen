@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "./static/css/main.5ba68ceb.css",
-    "main.js": "./static/js/main.0211198f.js",
+    "main.css": "./static/css/main.86ad3535.css",
+    "main.js": "./static/js/main.3d098a1f.js",
     "static/js/453.f19e9853.chunk.js": "./static/js/453.f19e9853.chunk.js",
+    "static/media/webtest-home.jpg": "./static/media/webtest-home.12465a6c3c1669ed4ed9.jpg",
+    "static/media/ucr-seal.png": "./static/media/ucr-seal.a3ae8af2e33f6ce7a38b.png",
+    "static/media/xdu-logo.png": "./static/media/xdu-logo.671811cd48ffddbf6ccd.png",
     "index.html": "./index.html",
-    "main.5ba68ceb.css.map": "./static/css/main.5ba68ceb.css.map",
-    "main.0211198f.js.map": "./static/js/main.0211198f.js.map",
+    "main.86ad3535.css.map": "./static/css/main.86ad3535.css.map",
+    "main.3d098a1f.js.map": "./static/js/main.3d098a1f.js.map",
     "453.f19e9853.chunk.js.map": "./static/js/453.f19e9853.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ba68ceb.css",
-    "static/js/main.0211198f.js"
+    "static/css/main.86ad3535.css",
+    "static/js/main.3d098a1f.js"
   ]
 }
