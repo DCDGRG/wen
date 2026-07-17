@@ -100,40 +100,6 @@
     font-weight: 750;
     backdrop-filter: blur(10px);
 }
-  
-.social-links {
-    margin-top: clamp(1rem, 3vw, 2rem);
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-  
-.social-links a {
-    text-decoration: none;
-    color: #0073e6;
-    font-size: clamp(0.875rem, 2vw, 1rem);
-    position: relative;
-    transition: all 0.3s ease;
-    padding: 12px 24px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 120px;
-}
-
-.social-links a:hover {
-    color: #005bb8;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    background: rgba(255, 255, 255, 1);
-}
-
-.social-links a::after {
-    display: none;
-}
 
 @keyframes fadeInDown {
     from {
@@ -157,15 +123,6 @@
     }
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 @media screen and (max-width: 768px) {
     .heroContainer {
         padding: 6.25rem 1rem 2.5rem;
@@ -178,15 +135,6 @@
 
     .hero-copy {
         max-width: 34rem;
-    }
-
-    .social-links {
-        gap: 15px;
-    }
-
-    .social-links a {
-        min-width: 100px;
-        padding: 10px 20px;
     }
 }
 

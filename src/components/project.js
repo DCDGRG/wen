@@ -1,4 +1,5 @@
 import React from "react";
+import webtestHome from '../assets/webtest-home.jpg';
 import './project.css';
 
 const projects = [
@@ -35,7 +36,7 @@ const projects = [
         github: "https://github.com/DCDGRG/webTest",
         icon: "fas fa-industry",
         visual: "Web",
-        image: "/webtest-home.png"
+        image: webtestHome
     }
 ];
 

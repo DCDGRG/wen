@@ -1,3 +1,12 @@
-# 忽略 node_modules 文件夹
+# dependencies
 node_modules/
 
+# production build (published to the gh-pages branch by `npm run deploy`)
+build/
+
+# misc
+.DS_Store
+*.log
+npm-debug.log*
+.env.local
+.env.*.local

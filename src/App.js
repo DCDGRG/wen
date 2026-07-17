@@ -13,11 +13,13 @@ function App() {
   return (
     <div className="App">
 
+      <a className="skip-link" href="#main">Skip to content</a>
+
       <header className='App-header'>
         <NavigationBar />
       </header>
 
-      <main>
+      <main id="main">
         <Hero />
 
         <SectionTitle eyebrow="Academic path" targetId="education">Education</SectionTitle>

@@ -22,8 +22,6 @@ function heroSection() {
           <span>Open to opportunities</span>
         </div>
 
-        <div className="social-links"></div>
-
       </div>
     </div>
   );

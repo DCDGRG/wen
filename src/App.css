@@ -3,6 +3,25 @@
   overflow-x: hidden;
 }
 
+.skip-link {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -150%);
+  z-index: 1001;
+  padding: 0.7rem 1.25rem;
+  background: var(--color-surface);
+  color: var(--color-primary-dark);
+  font-weight: 750;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+}
+
+.skip-link:focus-visible {
+  transform: translate(-50%, 0);
+}
+
 .App-header {
   position: relative;
   z-index: 10;

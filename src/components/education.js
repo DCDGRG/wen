@@ -1,4 +1,6 @@
 import React from 'react';
+import xduLogo from '../assets/xdu-logo.png';
+import ucrSeal from '../assets/ucr-seal.png';
 import './education.css';
 
 const Education = () => {
@@ -7,7 +9,7 @@ const Education = () => {
             <div className="education-container">
                 <div className="education-card">
                     <div className="education-logo">
-                        <img src="https://github.com/DCDGRG/image/blob/main/XDUlogo.png?raw=true" alt="XiDian University" />
+                        <img src={xduLogo} alt="XiDian University" />
                     </div>
                     <div className="education-details">
                         <h3>Bachelor of Engineering</h3>
@@ -30,7 +32,7 @@ const Education = () => {
 
                 <div className="education-card">
                     <div className="education-logo">
-                        <img src="https://github.com/DCDGRG/image/blob/main/ucr-seal-big.png?raw=true" alt="UCRlogo" />
+                        <img src={ucrSeal} alt="University of California, Riverside" />
                     </div>
                     <div className="education-details">
                         <h3>Master of Computer Science</h3>

@@ -1,8 +1,22 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders the hero heading', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
+});
+
+test('renders every navigation link', () => {
+  render(<App />);
+  const nav = screen.getByRole('navigation', { name: /portfolio navigation/i });
+  ['Home', 'Education', 'Skills', 'Projects', 'Contact'].forEach((label) => {
+    expect(within(nav).getByRole('link', { name: label })).toBeInTheDocument();
+  });
+});
+
+test('renders the contact form fields', () => {
+  render(<App />);
+  expect(screen.getByLabelText('Name')).toBeInTheDocument();
+  expect(screen.getByLabelText('Email')).toBeInTheDocument();
+  expect(screen.getByLabelText('Message')).toBeInTheDocument();
 });
